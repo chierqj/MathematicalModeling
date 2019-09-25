@@ -1,0 +1,53 @@
+点类
+
+// 向着目标点nxtP移动len个距离后的点
+Point moveToPoint(const Point &nxtP, const double &len);
+// 获取两点距离
+double getDis(const Point &preP, const Point &nxtP) const;
+// 求解平面方程
+void calFlatEquation(const Point &p1, const Point &p2, const Point P3,
+                   double &A, double &B, double &C, double &D);
+// 根据两点求直线方程
+Line calLine(const Point &p1, const Point &p2);
+
+// 过该点，垂直与直线L的垂线方程
+Line calVerLine(const Line &L);
+
+// 两条直线求交点
+Point calComPoint(const Line &L1, const Line &L2);
+
+遗传算法：
+
+// 单元测试
+bool test();
+// 入口函数
+void execute();
+// 种群初始化
+void popuInit();
+// 交叉
+void cross();
+// 变异
+void variation();
+// 校正
+void fix();
+// 局部搜索
+void partSearch();
+// 选择
+void select();
+// 迭代到下一代的处理
+void initialize();
+
+A*寻路
+
+// 路径最短情况下可行路径(满足约束)
+std::vector<Point> findShortDisPath(const Point &mStart, const Point &mEnd);
+
+// 校正点最少情况下可行路径(满足约束)
+std::vector<Point> findMinFixCountPath(const Point &mStart,
+                                     const Point &mEnd);
+
+// 初始化种群,随机选取简单路径 (不一定满足约束)
+std::vector<Point> randomSimplePath(const Point &mStart, const Point &mEnd);
+
+// 简单路径(不一定满足约束)
+std::vector<Point> simplePath(const Point &mStart, const Point &mEnd);

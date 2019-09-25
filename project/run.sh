@@ -1,0 +1,1 @@
+cd src && g++ -std=c++11 main.cpp -o main && mv main ../bin/ && cd ../bin && ./main $1 $2 $3
